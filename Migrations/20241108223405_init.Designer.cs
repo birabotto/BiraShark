@@ -12,7 +12,7 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241108220422_init")]
+    [Migration("20241108223405_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -78,6 +78,10 @@ namespace api.Migrations
 
                     b.Property<decimal>("Purchase")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
